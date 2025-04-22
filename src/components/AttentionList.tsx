@@ -12,7 +12,6 @@ interface Estudante {
 interface AttentionListProps {
   refresh: boolean;
 }
-
 function AttentionList({ refresh }: AttentionListProps) {
   const [lowAttendanceStudents, setLowAttendanceStudents] = useState<Estudante[]>([]);
   const [lowGradesStudents, setLowGradesStudents] = useState<Estudante[]>([]);

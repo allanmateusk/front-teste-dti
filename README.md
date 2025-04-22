@@ -1,54 +1,116 @@
-# React + TypeScript + Vite
+🎓 Sistema de Controle de Alunos - Front-end
+Interface web para controle de alunos, construída utilizando React com TypeScript.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto permite:
 
-Currently, two official plugins are available:
+Cadastrar alunos com nome, notas e frequência.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Exibir a média das notas e a frequência de cada aluno.
 
-## Expanding the ESLint configuration
+Destacar alunos que precisam de atenção especial:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Frequência abaixo de 75%;
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Média abaixo da média da turma.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🚀 Tecnologias Utilizadas
+React
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+TypeScript
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Vite
+
+Axios (requisições HTTP)
+
+📂 Como Rodar o Projeto
+1. Clonar o Repositório
+bash
+Copiar
+Editar
+git clone git@github.com:allanmateusk/front-teste-dti.git
+ou via HTTPS:
+
+bash
+Copiar
+Editar
+git clone https://github.com/allanmateusk/front-teste-dti.git
+2. Entrar na pasta do projeto
+bash
+Copiar
+Editar
+cd front-teste-dti
+3. Instalar as dependências
+bash
+Copiar
+Editar
+npm install
+ou
+
+bash
+Copiar
+Editar
+yarn install
+4. Rodar o projeto
+bash
+Copiar
+Editar
+npm run dev
+ou
+
+bash
+Copiar
+Editar
+yarn dev
+O front-end estará disponível em:
+
+arduino
+Copiar
+Editar
+http://localhost:5173
+📡 Configuração de API
+O front-end se comunica com o back-end através de chamadas HTTP feitas pelo Axios.
+
+Base URL configurada em /src/services/api.ts:
+
+typescript
+Copiar
+Editar
+const api = axios.create({
+  baseURL: "http://localhost:8080",
+});
+Certifique-se que o back-end esteja rodando em localhost:8080.
+
+🧑‍💻 Funcionalidades do Front-end
+Formulário para cadastro de novos alunos.
+
+Cálculo automático da média individual.
+
+Exibição da lista de alunos cadastrados.
+
+Identificação de alunos que:
+
+Têm frequência abaixo de 75%;
+
+Têm média abaixo da média geral da turma.
+
+Estilização com tema escuro e cards para destaque de alunos.
+
+🎨 Layout Visual
+Layout adaptado para tema escuro.
+
+Cards destacados:
+
+Atenção por frequência baixa: fundo amarelo claro.
+
+Atenção por média baixa: fundo vermelho claro.
+
+Botões com efeito de hover.
+
+💬 Observações
+Projeto desenvolvido apenas para fins de teste técnico.
+
+Caso queira trocar a API base (em produção, por exemplo), basta alterar o arquivo src/services/api.ts.
+
+🧑 Autor
+Desenvolvido por [Allan Mateus].
+
